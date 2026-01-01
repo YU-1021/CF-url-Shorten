@@ -1,8 +1,3 @@
-/**
- * 全功能汉化版 Url-Shorten-Worker
- * 功能：密码登录、自动补齐HTTPS、管理系统（删除/改后缀）、防止删除残留
- */
-
 const config = {
   no_ref: "off", // 是否隐藏来源页面
   cors: "on",    // 是否开启跨域
@@ -240,7 +235,7 @@ async function handleRequest(request) {
     for (let key of list.keys) {
       if (key.name.length < 50) { // 过滤掉过长的混淆键
         const value = await LINKS.get(key.name);
-        if (value !== null) { // 核心修复：只返回非 null 的数据
+        if (value !== null) { 
           links.push({ key: key.name, value: value });
         }
       }
